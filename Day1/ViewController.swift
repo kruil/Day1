@@ -11,9 +11,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        addGradientView()
     }
 
-
+    private func addGradientView() {
+        let gradientView = GradientView()
+        gradientView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(gradientView)
+        NSLayoutConstraint.activate([
+            gradientView.widthAnchor.constraint(equalToConstant: 100),
+            gradientView.heightAnchor.constraint(equalTo: gradientView.widthAnchor),
+            gradientView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            gradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 100)
+        ])
+    }
 }
 
